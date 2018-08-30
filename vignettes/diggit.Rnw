@@ -35,8 +35,9 @@ Chen JC, Alvarez MJ, Talos F, Dhruv H, Rieckhof GE, Iyer A, Diefes KL, Aldape K,
 In order to install the \emph{diggit} package, the user must first install R (\url{http://www.r-project.org}). After that, \emph{diggit} and the required data package for the examples and this vignette (\emph{diggitdata}) can be installed with:
 
 <<echo=TRUE, eval=FALSE, results=hide>>=
-source("http://bioconductor.org/biocLite.R")
-biocLite(c("diggitdata", "diggit"))
+if (!requireNamespace("BiocManager", quietly=TRUE))
+    install.packages("BiocManager")
+BiocManager::install(c("diggitdata", "diggit"))
 @
 
 %-------------
